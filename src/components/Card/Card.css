@@ -1,0 +1,13 @@
+.cart{
+  padding: 25px;
+}
+.card{
+  padding: 15px;
+  
+}
+.btn-cart{
+  border: none;
+  position: absolute;
+  bottom: 0.2rem;
+  padding: 8px;
+}
