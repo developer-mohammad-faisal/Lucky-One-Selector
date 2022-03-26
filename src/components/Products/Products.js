@@ -23,7 +23,6 @@ const Products = () => {
       alert('warring')
     }
     else{
-
       setCarts(newCart)
     }
   }
