@@ -2,9 +2,11 @@ import React from 'react';
 
 const FQA = () => {
   return (
-    <div className='d-flex mt-5 mb-2 container'>
-        <div>
-        <div classNameName="accordion ms-2 shadow" id="accordionExample">
+    <div className='container pt-5 pb-5'>
+
+      <div className='row'>
+        <div className="col-md-6">
+        <div classNameName="accordion ms-2 row-cols-md-6 shadow" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header" id="headingOne">
       <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -49,9 +51,13 @@ const FQA = () => {
   </div>
 </div>
         </div>
-        <div className=' shadow'>
-          <img width={'400px'} height={'310px'} src={'https://img.freepik.com/free-vector/faqs-concept-illustration_114360-5185.jpg?size=338&ext=jpg&ga=GA1.2.1864355548.1648299013'} alt="" />
+
+        <div className="col-md-6">
+          <img width={'500px'} height={'350px'} src={'https://img.freepik.com/free-vector/faqs-concept-illustration_114360-5185.jpg?size=338&ext=jpg&ga=GA1.2.1864355548.1648299013'} alt="" />
+        
         </div>
+      </div>
+
     </div>
   );
 };
