@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import CardDetails from '../CardDetails/CardDetails';
+import './Products.css'
 
 const Products = () => {
 
@@ -62,7 +63,7 @@ const Products = () => {
    </div> 
     </div>
 
-    <div className='col-md-3 bg-info'> 
+    <div className='col-md-3 card-info'> 
       <h5 className='text-center my-4'>Laptop Details</h5>
         {
           carts.map(cart => <CardDetails key={cart.id}  image={cart.img} name={cart.name} ></CardDetails>)
