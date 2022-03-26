@@ -16,15 +16,22 @@ const Products = () => {
 
   // btn state
   const [carts, setCarts] = useState([])
-  console.log(carts);
-  const cartDetails = (items) => {
-    let newCart = [...carts, items]
-    if(newCart.length > 4){
-      alert('warring')
+
+  const cartDetails = items => {
+    let newCart = []
+    if(!carts.includes(items)){
+      if(carts.length < 4){
+        newCart = [...carts, items]
+      }
+      else{
+        alert('You cannot add more details')
+        return;
+      }
     }
     else{
-      setCarts(newCart)
+      return;
     }
+    setCarts(newCart)
   }
 
   const removeItems = (items) => {
@@ -33,12 +40,22 @@ const Products = () => {
     setCarts(newCart)
   }
 
+  const chooseOneProduct = () => {
+    if(carts.length === 0){
+        return;
+    }
+   else{
+    const randomProduct = carts[Math.floor(Math.random() * carts.length)];
+    setCarts([randomProduct])
+   }
+  }
+
 
   return (
   
     <div className='row w-100 mt-5'>
     <div className='col-md-9 '>
-    <div className='row row-cols-md-1 row-cols-md-3'>
+    <div className='row g-3 row-cols-md-3'>
             {
                products.map(product => <Card key={product.id} carts={carts} cartDetails={cartDetails} product={product} ></Card>)
              }
@@ -47,14 +64,14 @@ const Products = () => {
 
     <div className='col-md-3 bg-info'> 
       <h5 className='text-center my-4'>Laptop Details</h5>
-      {
-        carts.map(cart => <CardDetails key={cart.id}  image={cart.img} name={cart.name} ></CardDetails>)
-      }
+        {
+          carts.map(cart => <CardDetails key={cart.id}  image={cart.img} name={cart.name} ></CardDetails>)
+        }
 
-      <div>
-      <button className='btn btn-primary text-white border-0'>Product Details</button>
+      <div className='d-block text-center'>
+      <button onClick={chooseOneProduct} className='btn btn-primary text-white border-0'>Choose one Product</button>
       </div>
-      <div>
+      <div className='d-block text-center'>
       <button onClick={removeItems} className='btn btn-danger my-2 text-white border-0'>Remove Items</button>
       </div>
 

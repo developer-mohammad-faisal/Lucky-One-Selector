@@ -3,7 +3,6 @@ import './CardDetails.css'
 
 const CardDetails = ({image, name,}) => {
 
-
   return (
     <div>
 
