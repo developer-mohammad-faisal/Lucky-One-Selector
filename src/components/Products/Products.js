@@ -18,6 +18,7 @@ const Products = () => {
   // btn state
   const [carts, setCarts] = useState([])
 
+  // add to cart product  
   const cartDetails = items => {
     let newCart = []
     if(!carts.includes(items)){
@@ -35,12 +36,14 @@ const Products = () => {
     setCarts(newCart)
   }
 
+  // remove selected all product
   const removeItems = (items) => {
     let newCart = [...carts, items]
     newCart = []
     setCarts(newCart)
   }
 
+  // selected product 
   const chooseOneProduct = () => {
     if(carts.length === 0){
         return;
@@ -54,6 +57,7 @@ const Products = () => {
 
   return (
   
+    // display show product
     <div className='row w-100 mt-5'>
     <div className='col-md-9 '>
     <div className='row g-3 row-cols-md-3'>
