@@ -18,14 +18,22 @@ const Products = () => {
   const [carts, setCarts] = useState([])
   console.log(carts);
   const cartDetails = (items) => {
-    const newCart = [...carts, items]
+    let newCart = [...carts, items]
+    if(newCart.length > 4){
+      alert('warring')
+    }
+    else{
+
+      setCarts(newCart)
+    }
+  }
+
+  const removeItems = (items) => {
+    let newCart = [...carts, items]
+    newCart = []
     setCarts(newCart)
   }
 
-  const productDetails = () => {
-    const randomProduct = carts[Math.floor(Math.random() * carts.length)]
-    return randomProduct
-  }
 
   return (
   
@@ -41,14 +49,14 @@ const Products = () => {
     <div className='col-md-3 bg-info'> 
       <h5 className='text-center my-4'>Laptop Details</h5>
       {
-        carts.map(cart => <CardDetails key={cart.id} productDetails={productDetails} image={cart.img} name={cart.name} ></CardDetails>)
+        carts.map(cart => <CardDetails key={cart.id}  image={cart.img} name={cart.name} ></CardDetails>)
       }
 
       <div>
-      <button onClick={productDetails} className='btn btn-primary text-white border-0'>Product Details</button>
+      <button className='btn btn-primary text-white border-0'>Product Details</button>
       </div>
       <div>
-      <button className='btn btn-danger my-2 text-white border-0'>Remove Items</button>
+      <button onClick={removeItems} className='btn btn-danger my-2 text-white border-0'>Remove Items</button>
       </div>
 
     </div>

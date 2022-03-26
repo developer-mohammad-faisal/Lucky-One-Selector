@@ -1,7 +1,7 @@
 import React from 'react';
 import './CardDetails.css'
 
-const CardDetails = ({image, name, productDetails}) => {
+const CardDetails = ({image, name,}) => {
 
 
   return (
@@ -13,7 +13,6 @@ const CardDetails = ({image, name, productDetails}) => {
           <i className="bi bi-trash-fill icon"></i>
           
         </div>
-        <h1>{productDetails}</h1>
     </div>
   );
 };
